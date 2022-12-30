@@ -7,13 +7,52 @@
 {% endblock head %}
 {% block content %}
 <ol class="posts-list">
-  {% for page in section.pages %}
+  {% if lang == "es" %}
+  {% set other_language = "en" %}
+  {% else %}
+  {% set other_language = "es" %}
+  {% endif %}
+
+  {# Get this same section on a different language #}
+  {% set other_section_translation = section.translations | filter(attribute="lang", value=other_language) | first %}
+  {% set other_section = get_section(path=other_section_translation.path) %}
+
+  {# Combine all pages - some will be duplicated in both languages, some available in only one of them #}
+  {% set all_pages = section.pages | concat(with=other_section.pages) %}
+
+  {# Group the pages by date - this will be fine so long as I don't post more than twice a day #}
+  {% set pages_by_date = all_pages | group_by(attribute="date") %}
+  {% set dates = all_pages | map(attribute="date") | unique | sort | reverse %}
+
+  {#
+  Use the dates as the "unique keys" for each post. Ideally it would be the slug but the templating language
+  is sort of limited
+  #}
+  {% for date in dates %}
+  {% set pages = pages_by_date[date] %}
+  {% set page_in_current_language = pages | filter(attribute="lang", value=lang) | first %}
+  {% set page_in_different_language = pages | filter(attribute="lang", value=other_language) | first %}
+
+  {% if page_in_current_language %}
+  {% set page = page_in_current_language %}
+  {% else %}
+  {% set page = page_in_different_language %}
+  {% endif %}
+
   <li class="posts-list__post">
     <div class="posts-list__post-title">
       <a href="{{page.permalink}}">{{page.title}}</a>
     </div>
     <div>
       <time class="posts-list__post-date" datetime="{{page.date}}">{{page.year}}/{{page.month}}/{{page.day}}</time>
+      {% if page == page_in_different_language %}
+      <span class="posts-list__post-extra"> - {{trans(key="only_available_in_different_language",
+        lang=lang)}}</span>
+      {% elif page_in_different_language %}
+      <span class="posts-list__post-extra"> - <a
+          href="{{page_in_different_language.permalink}}">{{trans(key="also_available_in_different_language",
+          lang=other_language)}}</a></span>
+      {% endif %}
     </div>
   </li>
   {% endfor %}

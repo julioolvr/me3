@@ -7,7 +7,15 @@ compile_sass = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+[translations]
+only_available_in_different_language = "Spanish only"
+also_available_in_different_language = "Also available in English"
+
 [languages.es]
+
+[languages.es.translations]
+only_available_in_different_language = "Solo en inglés"
+also_available_in_different_language = "También en español"
 
 [markdown]
 # Whether to do syntax highlighting
