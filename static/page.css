@@ -5,6 +5,11 @@ article {
 time {
   color: var(--metadata-color);
   display: block;
+  margin-top: 8px;
+}
+
+h1 {
+  margin: 0;
 }
 
 .container {
