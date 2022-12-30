@@ -1,0 +1,126 @@
+:root {
+  --background-color: #fafafa;
+  --text-color: #444444;
+  --link-color: #458dce;
+  --code-color: #444444;
+  --code-background-color: #f0f0f0;
+  --quote-border-color: #0A5AA3;
+  --menu-background-color: #f1f1f1;
+  --metadata-color: #888888;
+}
+
+html, body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  font-size: 18px;
+  font-family: Merriweather, serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Fira Sans, sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 36px;
+  margin-top: 48px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+p {
+  line-height: 2;
+  margin-bottom: 32px;
+}
+
+ul {
+  margin-bottom: 32px;
+}
+
+li {
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  color: var(--code-color);
+  background-color: var(--code-background-color);
+  border-radius: 2px;
+}
+
+a code {
+  color: var(--link-color);
+}
+
+/* TODO: Review how to force colors for syntax highlight */
+pre code {
+  background-color: transparent;
+  color: #c5c8c6;
+  overflow-x: auto;
+  padding: 1em;
+  border-radius: 3px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 5px 20px 0px;
+  display: block;
+  background-color: #1d1f21;
+}
+
+@media only screen and (min-width: 812px) {
+  pre code {
+    width: 110%;
+    margin-left: -5%;
+  }
+}
+
+/* code[class *= 'language-'], pre[class *= 'language-'] {
+  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  padding: 1em;
+  border-radius: 3px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  word-break: normal;
+} */
+
+blockquote {
+  border-left: 3px solid var(--quote-border-color);
+  padding-left: 16px;
+  font-style: italic;
+}
+
+blockquote > p {
+  line-height: 1.75;
+}
+
+/* @media only screen and (min-width: 812px) {
+  code[class * ='language-'], pre[class * ='language-'] {
+      width: 110%;
+      margin-left: -5%;
+  }
+} */

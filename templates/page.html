@@ -6,19 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  {% include "_head.html" %}
+  <link rel="stylesheet" href="/page.css">
 </head>
 
 <body>
-  <pre>
-    {{ __tera_context }}
-  </pre>
-  <h1>{{ page.title }}</h1>
-  {% for translation in page.translations %}
-  {% if translation.lang != lang %}
-  <p>{{translation.permalink}}</p>
-  {% endif %}
-  {% endfor %}
-  {{ page.content | safe }}
+  <div class="container">
+    <div class="content">
+      <article>
+        <h1>{{ page.title }}</h1>
+        {% for translation in page.translations %}
+        {% if translation.lang != lang %}
+        <p>{{translation.permalink}}</p>
+        {% endif %}
+        {% endfor %}
+        {{ page.content | safe }}
+      </article>
+    </div>
+  </div>
 </body>
 
 </html>
