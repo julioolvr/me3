@@ -1,0 +1,30 @@
+.posts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 40em;
+}
+
+.posts-list__post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+}
+
+.posts-list__post-title {
+  flex: 1 1 0%;
+  line-height: 1.2em;
+  font-size: 30px;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+}
+
+.posts-list__post-title a {
+  color: var(--text-color);
+}
+
+.posts-list__post-date {
+  display: inline-block;
+  font-size: 0.8em;
+  color: var(--metadata-color);
+}

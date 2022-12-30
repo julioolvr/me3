@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "page.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <ul>
-    {% for page in section.pages %}
-    <li><a href="{{page.permalink}}">{{page.title}}</a></li>
-    {% endfor %}
-  </ul>
-</body>
-
-</html>
+{% block title %}Blog{% endblock title %}
+{% block head %}
+{{super()}}
+<link rel="stylesheet" href="/blog.css">
+{% endblock head %}
+{% block content %}
+<ol class="posts-list">
+  {% for page in section.pages %}
+  <li class="posts-list__post">
+    <div class="posts-list__post-title">
+      <a href="{{page.permalink}}">{{page.title}}</a>
+    </div>
+    <div>
+      <time class="posts-list__post-date" datetime="{{page.date}}">{{page.year}}/{{page.month}}/{{page.day}}</time>
+    </div>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock content %}
