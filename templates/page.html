@@ -1,14 +1,8 @@
 {% extends "_base.html" %}
 
-{% block title %}{{page.title}}{% endblock title %}
-{% block head %}
-<link rel="stylesheet" href="/page.css">
-{% endblock head %}
 {% block body %}
-<div class="container">
-  {% include "_navbar.html" %}
-  <div class="content">
-    {% block content %}{{ page.content | safe }}{% endblock %}
-  </div>
+{% include "_navbar.html" %}
+<div class="content">
+  {% block content %}{{ page.content | safe }}{% endblock %}
 </div>
 {% endblock body %}
