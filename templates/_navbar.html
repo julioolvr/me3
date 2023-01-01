@@ -1,8 +1,15 @@
 <header>
   <nav>
+    {% if lang == 'en' %}
     <a href="/b">blog</a>
     <a href="/talks">talks</a>
     <a href="/things">things</a>
     <a href="https://github.com/julioolvr">github</a>
+    {% else %}
+    <a href="/es/b">blog</a>
+    <a href="/es/talks">talks</a>
+    <a href="/es/things">things</a>
+    <a href="https://github.com/julioolvr">github</a>
+    {% endif %}
   </nav>
 </header>
