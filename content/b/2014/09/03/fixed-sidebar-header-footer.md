@@ -17,7 +17,7 @@ case is fixed too, it probably will also have a fixed height. For this example
 they are 40px each, so it's as simple as giving the sidebar a
 `height: calc(100% - 80px)`.
 
-<Codepen id="klvdG" />
+{{ codepen(id="klvdG") }}
 
 One important advantage of this approach is that, since the sidebar's real
 height is what it's supposed to be (and not bigger as in the following
@@ -27,7 +27,7 @@ If `calc` can't be used, another approach is add a padding to the sidebar.
 Again, very simple, just add a top and bottom padding that are equal to the
 header and footer's height, 40px in this example:
 
-<Codepen id="fLjBy" />
+{{ codepen(id="fLjBy") }}
 
 This works in _most_ browsers, although you can see the cropped scrollbar.
 
@@ -46,6 +46,6 @@ and `:after` elements with the height of the header and footer, and THOSE will
 be the ones that end up hidden. This has the same issue with the scrollbar as
 the previous solution, but supports IE8:
 
-<Codepen id="dtqxE" />
+{{ codepen(id="dtqxE") }}
 
 And that's it, I hope this saves someone some time :)
