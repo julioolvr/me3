@@ -1,0 +1,27 @@
+.homepage {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage__content {
+  padding-left: 1rem;
+  border-left: 2px solid var(--link-color);
+}
+
+.homepage__name {
+  margin-top: 0;
+}
+
+.homepage__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage__menu a {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-family: Fira Sans, sans-serif;
+}
