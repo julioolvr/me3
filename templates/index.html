@@ -1,14 +1,20 @@
 {% extends "_base.html" %}
 
 {% block title %}Julio{% endblock title %}
+{% block head %}
+{{super()}}
+<link rel="stylesheet" href="/homepage.css">
+{% endblock head %}
 {% block body %}
-<div class="content">
-  <h1>Julio Olivera</h1>
-  <ul>
-    <li><a href="/b">blog</a></li>
-    <li><a href="/talks">talks</a></li>
-    <li><a href="/things">things</a></li>
-    <li><a href="https://github.com/julioolvr">github</a></li>
-  </ul>
+<div class="homepage">
+  <div class="homepage__content">
+    <h1 class="homepage__name">Julio Olivera</h1>
+    <ul class="homepage__menu">
+      <li><a href="/b">blog</a></li>
+      <li><a href="/talks">talks</a></li>
+      <li><a href="/things">things</a></li>
+      <li><a href="https://github.com/julioolvr">github</a></li>
+    </ul>
+  </div>
 </div>
 {% endblock body %}
