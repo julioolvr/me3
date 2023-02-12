@@ -12,3 +12,9 @@
 [@GraphQL BA](https://www.meetup.com/GraphQL-BA/), April 2017
 
 {{ youtube(id="i35IQNQxzS8", title="GraphQL Real Time con Subscriptions") }}
+
+# Intro a Ember.js
+
+[@Meetup.js Buenos Aires](https://www.meetup.com/Meetup-js/), July 2014
+
+{{ slideshare(id="lvkd4A8NRRkD9M", title="Intro a Ember.js") }}
