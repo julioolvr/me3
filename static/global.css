@@ -4,12 +4,17 @@
   --link-color: #458dce;
   --code-color: #444444;
   --code-background-color: #f0f0f0;
-  --quote-border-color: #0A5AA3;
+  --quote-border-color: #0a5aa3;
   --menu-background-color: #f1f1f1;
   --metadata-color: #888888;
 }
 
-html, body {
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
   background-color: var(--background-color);
   color: var(--text-color);
 
@@ -18,7 +23,12 @@ html, body {
   line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Fira Sans, sans-serif;
 }
 
